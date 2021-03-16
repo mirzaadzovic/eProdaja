@@ -11,7 +11,7 @@ namespace eProdaja.Controllers
     [Route("[controller]")]
     public class ProizvodController:ControllerBase
     {
-        private IProizvodServices _proizvodi;
+        private readonly IProizvodServices _proizvodi;
 
         public ProizvodController(IProizvodServices proizvodi)
         {
