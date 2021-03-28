@@ -33,8 +33,11 @@ namespace eProdaja
             services.AddSwaggerGen();
             services.AddDbContext<eProdajaContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("eProdajaConnectionString")));
-            services.AddScoped<IProizvodServices, ProizvodServices>();
+            services.AddScoped<IProizvodService, ProizvodServices>();
             services.AddScoped<IKorisniciService, KorisniciService>();
+            services.AddScoped<IJedinicaMjereService, JedinicaMjereService>();
+            services.AddScoped<IVrsteProizvodumService, VrsteProizvodumService>();
+            services.AddScoped<IProizvodService, ProizvodServices>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -5,7 +5,8 @@ using System.Threading.Tasks;
 
 namespace eProdaja.Services
 {
-    interface IProizvod
+    public interface IVrsteProizvodumService:IReadService<Model.VrsteProizvodum, object>
     {
+
     }
 }

@@ -8,30 +8,22 @@ using System.Threading.Tasks;
 
 namespace eProdaja.Services
 {
-    public class KorisniciService : IKorisniciService
+    public class KorisniciService : BaseCRUDService<Model.Korisnici, KorisniciSearchObject, object, object, Database.Korisnici>, IKorisniciService
     {
-        private eProdajaContext _db { get; set; }
-        private readonly IMapper _mapper;
-        public KorisniciService(eProdajaContext db, IMapper mapper)
-        {
-            _db = db;
-            _mapper = mapper;
-        }
 
-        public IList<Model.Korisnici> Get()
+        public KorisniciService(eProdajaContext db, IMapper mapper):base(db, mapper)
         {
-            return _db.Korisnicis.Select(korisnik=>_mapper.Map<Model.Korisnici>(korisnik)).ToList();
         }
-        public Model.Korisnici GetById(int id)
+        public override IEnumerable<Model.Korisnici> Get(KorisniciSearchObject search = null)
         {
-            return _db.Korisnicis.Where(korisnik=>korisnik.KorisnikId==id)
-                .Select(korisnik => _mapper.Map<Model.Korisnici>(korisnik))
-                .SingleOrDefault();
-        }
+            var set = _context.Set<Database.Korisnici>().AsQueryable();
+            if (!string.IsNullOrEmpty(search?.Ime))
+            {
+                set = set.Where(k => k.Ime.StartsWith(search.Ime));
+            }
+            var entity = set.ToList();
 
-        public Model.Korisnici Insert(KorisniciInsertRequest korisnik)
-        {
-            throw new NotImplementedException();
+            return _mapper.Map<List<Model.Korisnici>>(entity);
         }
     }
 }

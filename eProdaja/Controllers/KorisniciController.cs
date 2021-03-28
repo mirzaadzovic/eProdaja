@@ -10,29 +10,14 @@ using System.Threading.Tasks;
 
 namespace eProdaja.Controllers
 {
-    [ApiController]
-    [Route("[controller]")]
-    public class KorisniciController : ControllerBase
+    //[ApiController]
+    //[Route("api/[controller]")]
+    public class KorisniciController : BaseCRUDController<Model.Korisnici, KorisniciSearchObject, object, object>
     {
-        private readonly IKorisniciService _korisniciService;
-        public KorisniciController(IKorisniciService korisniciService)
+
+        public KorisniciController(IKorisniciService service):base(service)
         {
-            _korisniciService = korisniciService;
-        }
-        [HttpGet]
-        public IList<Model.Korisnici> Get()
-        {
-            return _korisniciService.Get();
-        }
-        [HttpGet("{id}")]
-        public Model.Korisnici GetById(int id)
-        {
-            return _korisniciService.GetById(id);
-        }
-        [HttpPost]
-        public Model.Korisnici Insert(KorisniciInsertRequest korisnik)
-        {
-            return _korisniciService.Insert(korisnik);
+
         }
     }
 }

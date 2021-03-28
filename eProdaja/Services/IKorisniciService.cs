@@ -7,10 +7,8 @@ using System.Threading.Tasks;
 
 namespace eProdaja.Services
 {
-    public interface IKorisniciService
+    public interface IKorisniciService:ICRUDService<Model.Korisnici, KorisniciSearchObject, object, object> 
     {
-        IList<Model.Korisnici> Get();
-        Model.Korisnici GetById(int id);
-        Model.Korisnici Insert(KorisniciInsertRequest korisnik);
+       
     }
 }
