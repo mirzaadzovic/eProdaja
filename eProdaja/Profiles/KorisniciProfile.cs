@@ -18,6 +18,7 @@ namespace eProdaja.Profiles
             CreateMap<Database.Proizvodi, Model.Proizvodi>();
             CreateMap<ProizvodiInsertRequest, Database.Proizvodi>();
             CreateMap<ProizvodiUpdateRequest, Database.Proizvodi>();
+            CreateMap<Database.Uloge, Model.Uloge>().ReverseMap();
         }
 
     }
