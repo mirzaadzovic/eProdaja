@@ -36,7 +36,8 @@ namespace eProdaja.WinForms
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.dodajToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.proizvodiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.prikazToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -44,7 +45,8 @@ namespace eProdaja.WinForms
             // menuStrip
             // 
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.korisniciToolStripMenuItem});
+            this.korisniciToolStripMenuItem,
+            this.proizvodiToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Size = new System.Drawing.Size(632, 24);
@@ -54,8 +56,7 @@ namespace eProdaja.WinForms
             // korisniciToolStripMenuItem
             // 
             this.korisniciToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.prikažiToolStripMenuItem,
-            this.dodajToolStripMenuItem});
+            this.prikažiToolStripMenuItem});
             this.korisniciToolStripMenuItem.Name = "korisniciToolStripMenuItem";
             this.korisniciToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
             this.korisniciToolStripMenuItem.Text = "Korisnici";
@@ -64,7 +65,7 @@ namespace eProdaja.WinForms
             // 
             this.prikažiToolStripMenuItem.Name = "prikažiToolStripMenuItem";
             this.prikažiToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.prikažiToolStripMenuItem.Text = "Prikaži";
+            this.prikažiToolStripMenuItem.Text = "Prikaz korisnika";
             this.prikažiToolStripMenuItem.Click += new System.EventHandler(this.prikažiToolStripMenuItem_Click);
             // 
             // statusStrip
@@ -83,11 +84,20 @@ namespace eProdaja.WinForms
             this.toolStripStatusLabel.Size = new System.Drawing.Size(39, 17);
             this.toolStripStatusLabel.Text = "Status";
             // 
-            // dodajToolStripMenuItem
+            // proizvodiToolStripMenuItem
             // 
-            this.dodajToolStripMenuItem.Name = "dodajToolStripMenuItem";
-            this.dodajToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.dodajToolStripMenuItem.Text = "Dodaj";
+            this.proizvodiToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.prikazToolStripMenuItem});
+            this.proizvodiToolStripMenuItem.Name = "proizvodiToolStripMenuItem";
+            this.proizvodiToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
+            this.proizvodiToolStripMenuItem.Text = "Proizvodi";
+            // 
+            // prikazToolStripMenuItem
+            // 
+            this.prikazToolStripMenuItem.Name = "prikazToolStripMenuItem";
+            this.prikazToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.prikazToolStripMenuItem.Text = "Prikaz proizvoda";
+            this.prikazToolStripMenuItem.Click += new System.EventHandler(this.prikazToolStripMenuItem_Click);
             // 
             // frmPocetna
             // 
@@ -117,7 +127,8 @@ namespace eProdaja.WinForms
         private System.Windows.Forms.ToolTip toolTip;
         private System.Windows.Forms.ToolStripMenuItem korisniciToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem prikažiToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem dodajToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem proizvodiToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem prikazToolStripMenuItem;
     }
 }
 

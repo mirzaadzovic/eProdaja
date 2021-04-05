@@ -17,5 +17,7 @@ namespace eProdaja.Model
         public bool? Status { get; set; }
         public virtual JedinicaMjere JedinicaMjere { get; set; }
         public virtual VrsteProizvodum Vrsta { get; set; }
+        public string VrstaNaziv => Vrsta?.Naziv;
+        public string VrstaIdNaziv => $"{VrstaId} - {Vrsta?.Naziv}";
     }
 }

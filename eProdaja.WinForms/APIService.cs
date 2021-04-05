@@ -18,7 +18,7 @@ namespace eProdaja.WinForms
             _route = route;
         }
 
-        public async Task<T> Get<T>(object request)
+        public async Task<T> Get<T>(object request=null)
         {
             string url = $"{Properties.Settings.Default.APIUrl}/{_route}";
             if (request != null)

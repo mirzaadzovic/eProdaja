@@ -43,6 +43,10 @@
       <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ComponentModel.Annotations.5.0.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
@@ -72,6 +76,12 @@
     <Compile Include="frmPocetna.Designer.cs">
       <DependentUpon>frmPocetna.cs</DependentUpon>
     </Compile>
+    <Compile Include="Korisnici\frmKorisniciDodaj.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Korisnici\frmKorisniciDodaj.Designer.cs">
+      <DependentUpon>frmKorisniciDodaj.cs</DependentUpon>
+    </Compile>
     <Compile Include="Korisnici\KorisniciPrikaz.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,6 +89,12 @@
       <DependentUpon>KorisniciPrikaz.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
+    <Compile Include="Proizvodi\frmProizvodiPrikaz.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Proizvodi\frmProizvodiPrikaz.Designer.cs">
+      <DependentUpon>frmProizvodiPrikaz.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -86,8 +102,14 @@
     <EmbeddedResource Include="frmPocetna.resx">
       <DependentUpon>frmPocetna.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Korisnici\frmKorisniciDodaj.resx">
+      <DependentUpon>frmKorisniciDodaj.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Korisnici\KorisniciPrikaz.resx">
       <DependentUpon>KorisniciPrikaz.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Proizvodi\frmProizvodiPrikaz.resx">
+      <DependentUpon>frmProizvodiPrikaz.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

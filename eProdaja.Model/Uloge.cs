@@ -9,6 +9,10 @@ namespace eProdaja.Model
         public int UlogaId { get; set; }
         public string Naziv { get; set; }
         public string Opis { get; set; }
+        public override string ToString()
+        {
+            return Naziv;
+        }
 
     }
 }

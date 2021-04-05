@@ -13,7 +13,7 @@ namespace eProdaja.Services
         {
 
         }
-        public T Insert(TInsert request)
+        public virtual T Insert(TInsert request)
         {
             var entity = _mapper.Map<TDb>(request);
             var set = _context.Set<TDb>();
@@ -23,7 +23,7 @@ namespace eProdaja.Services
             
             return _mapper.Map<T>(entity);
         }
-        public T Update(int id, TUpdate request)
+        public virtual T Update(int id, TUpdate request)
         {
             var entity = _context.Set<TDb>().Find(id);
             _mapper.Map(request, entity);

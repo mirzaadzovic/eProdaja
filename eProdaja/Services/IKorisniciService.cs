@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace eProdaja.Services
 {
-    public interface IKorisniciService:ICRUDService<Model.Korisnici, KorisniciSearchObject, object, object> 
+    public interface IKorisniciService:ICRUDService<Model.Korisnici, KorisniciSearchObject, KorisniciInsertRequest, KorisniciUpdateRequest> 
     {
        
     }

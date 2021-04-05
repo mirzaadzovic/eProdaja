@@ -14,7 +14,8 @@ namespace eProdaja.WinForms.Korisnici
 {
     public partial class KorisniciPrikaz : Form
     {
-        private APIService _service = new APIService("Korisnici");
+        private APIService _korisnici = new APIService("Korisnici");
+        private APIService _uloge = new APIService("Uloge"); 
         public KorisniciPrikaz()
         {
             InitializeComponent();
@@ -26,7 +27,22 @@ namespace eProdaja.WinForms.Korisnici
             {
                 Ime = txtIme.Text
             };
-            dgvKorisnici.DataSource = await _service.Get<List<Model.Korisnici>>(search);
+            dgvKorisnici.DataSource = await _korisnici.Get<List<Model.Korisnici>>(search);
+        }
+
+
+        private void dgvKorisnici_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var item = dgvKorisnici.SelectedRows[0].DataBoundItem;
+
+            frmKorisniciDodaj frm = new frmKorisniciDodaj(item as Model.Korisnici);
+            frm.ShowDialog();
+        }
+
+        private void btnDodaj_Click(object sender, EventArgs e)
+        {
+            frmKorisniciDodaj frm = new frmKorisniciDodaj();
+            frm.ShowDialog();
         }
     }
 }

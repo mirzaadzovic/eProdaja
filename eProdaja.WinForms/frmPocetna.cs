@@ -1,4 +1,5 @@
 ﻿using eProdaja.WinForms.Korisnici;
+using eProdaja.WinForms.Proizvodi;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,6 +15,7 @@ namespace eProdaja.WinForms
     public partial class frmPocetna : Form
     {
         private int childFormNumber = 0;
+        private object frmProizvodi;
 
         public frmPocetna()
         {
@@ -102,6 +104,13 @@ namespace eProdaja.WinForms
             KorisniciPrikaz frm = new KorisniciPrikaz();
             frm.MdiParent = this;
             frm.Show();
+        }
+
+        private void prikazToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmProizvodiPrikaz frm = new frmProizvodiPrikaz();
+            frm.MdiParent = this;
+            frm.Show(); 
         }
     }
 }

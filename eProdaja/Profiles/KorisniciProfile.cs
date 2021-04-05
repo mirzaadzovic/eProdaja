@@ -13,6 +13,8 @@ namespace eProdaja.Profiles
         public KorisniciProfile()
         {
             CreateMap<Database.Korisnici, Model.Korisnici>().ReverseMap();
+            CreateMap<Model.KorisniciInsertRequest ,Database.Korisnici>();
+            CreateMap<Model.KorisniciUpdateRequest, Database.Korisnici>();
             CreateMap<Database.JediniceMjere, Model.JedinicaMjere>();
             CreateMap<Database.VrsteProizvodum, Model.VrsteProizvodum>();
             CreateMap<Database.Proizvodi, Model.Proizvodi>();

@@ -12,7 +12,7 @@ namespace eProdaja.Controllers
 {
     //[ApiController]
     //[Route("api/[controller]")]
-    public class KorisniciController : BaseCRUDController<Model.Korisnici, KorisniciSearchObject, object, object>
+    public class KorisniciController : BaseCRUDController<Model.Korisnici, KorisniciSearchObject, KorisniciInsertRequest, KorisniciUpdateRequest>
     {
 
         public KorisniciController(IKorisniciService service):base(service)
